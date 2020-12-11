@@ -1,0 +1,80 @@
+/* ---- */
+
+@font-face {
+  src: url("../font/menu.ttf");
+  font-family: "menu";
+}
+
+@font-face {
+  src: url("../font/bunner-title.ttf");
+  font-family: "bunner-title";
+}
+
+@font-face {
+  src: url("../font/title-text.ttf");
+  font-family: "title-text";
+}
+
+@font-face {
+  src: url("../font/text.ttf");
+  font-family: "text";
+}
+
+.btn-primary {
+  border-bottom-left-radius: 7px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+/* ------------------------------------------------------------------- */
+/* Menu */
+/* ------------------------------------------------------------------- */
+
+menu {
+  font-family: "menu" !important;
+}
+
+@media (max-width: 768px) {
+  li.dropdown:hover .dropdown-menu {
+    display: block !important;
+    clip-path: polygon(17% 0, 26% 12%, 100% 12%, 100% 70%, 100% 100%, 50% 100%, 0 100%, 0% 70%, 0 12%, 10% 12%);
+    transform: translate(-20px, -5px);
+    cursor: pointer;
+  }
+}
+
+/* ------------------------------------------------------------------- */
+/* Main */
+/* ------------------------------------------------------------------- */
+
+.bunner-title {
+  font-family: "bunner-title";
+}
+
+.section-title {
+  font-family: "bunner-title";
+}
+
+.title-text,
+.card-title {
+  font-family: "title-text";
+}
+
+div {
+  font-family: "text";
+}
+
+.detail-day,
+.detail-time {
+  font-family: "text";
+  font-weight: 200;
+}
+
+.online-clock {
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .bunner-title h2 {
+    font-size: 5rem !important;
+  }
+}
