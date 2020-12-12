@@ -731,8 +731,9 @@ section.bunner {
 
 @media (max-width: 767px) {
   .bunner-keeper-element > .img-person-bunner {
-    width: 300px;
+    width: 250px;
     top: 50%;
+    right: 14%;
   }
   .bunner-keeper-element > .img-virus-bunner {
     position: absolute;
@@ -1867,7 +1868,7 @@ footer {
     width: 150px;
   }
   .footer-communicate-sec {
-    padding: 5rem;
+    padding: 4rem;
   }
 }
 
