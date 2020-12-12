@@ -1707,7 +1707,7 @@ footer {
 }
 
 .footer-communicate-sec {
-  padding: 6rem !important;
+  padding: 6rem;
 }
 
 .contact-items a .icon {
@@ -1865,6 +1865,9 @@ footer {
 @media (max-width: 767px) {
   .writer img {
     width: 150px;
+  }
+  .footer-communicate-sec {
+    padding: 5rem;
   }
 }
 
