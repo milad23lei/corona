@@ -1744,7 +1744,7 @@ footer {
   background-size: cover;
   position: absolute;
   left: -0.75px;
-  top: -27%;
+  top: -24%;
   width: 250px;
   height: 250px;
 }
@@ -1799,6 +1799,10 @@ footer {
 .footer-communicate-sec {
   position: relative;
   z-index: 9;
+}
+
+.footer-communicate-sec {
+  padding: 6rem !important;
 }
 
 .contact-items a .icon {
