@@ -752,7 +752,7 @@ section.bunner {
     transform: translate(-50%, -35%) !important;
   }
   .bunner-title > h2 {
-    font-size: 6rem;
+    font-size: 4rem !important;
     font-weight: bold;
   }
 }
