@@ -706,12 +706,12 @@ section.bunner {
 .bunner-title {
   position: absolute;
   top: 30%;
-  left: 45%;
+  left: 50%;
   transform: translate(-45%, -30%) !important;
 }
 
 .bunner-title > h2 {
-  font-size: 8rem;
+  font-size: 7rem;
   font-weight: bold;
 }
 
@@ -749,6 +749,10 @@ section.bunner {
     top: 30%;
     left: 50%;
     transform: translate(-50%, -35%) !important;
+  }
+  .bunner-title > h2 {
+    font-size: 6rem;
+    font-weight: bold;
   }
 }
 
@@ -847,7 +851,7 @@ section.bunner {
   .bunner-title {
     position: absolute;
     top: 30%;
-    left: 45%;
+    left: 50%;
   }
   .bunner-keeper-element > .img-person-bunner {
     width: 400px;

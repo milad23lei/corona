@@ -6,7 +6,8 @@
 }
 
 @font-face {
-  src: url("../font/bunner-title.ttf");
+  /* src: url("../font/bunner-title.ttf"); */
+  src: url("../font/title-text.ttf");
   font-family: "bunner-title";
 }
 
@@ -77,4 +78,11 @@ div {
   .bunner-title h2 {
     font-size: 5rem !important;
   }
+}
+
+@media (min-width: 1535px){
+ .bunner-title {
+  position: absolute;
+  top: 30%;
+  left: 48%;
 }
