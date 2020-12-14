@@ -80,9 +80,10 @@ div {
   }
 }
 
-@media (min-width: 1535px){
- .bunner-title {
-  position: absolute;
-  top: 30%;
-  left: 48%;
+@media (min-width: 1535px) {
+  .bunner-title {
+    position: absolute;
+    top: 30%;
+    left: 48%;
+  }
 }

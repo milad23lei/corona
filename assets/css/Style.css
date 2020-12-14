@@ -188,6 +188,7 @@ section.loader h2 {
   cursor: pointer;
   border-bottom-right-radius: 7px !important;
   border: none;
+  outline: none !important;
 }
 
 .btn-primary:hover:before {
@@ -260,7 +261,7 @@ section.loader h2 {
   padding: 15px 35px;
   letter-spacing: 1px;
   font-weight: 400;
-  outline: none;
+  outline: none !important;
   position: relative;
   -webkit-transition: var(--transition);
   -moz-transition: var(--transition);
@@ -1872,7 +1873,7 @@ footer {
     width: 150px;
   }
   .footer-communicate-sec {
-    padding: 4rem;
+    padding: 3rem;
   }
 }
 
