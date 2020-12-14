@@ -75,6 +75,9 @@ div {
 }
 
 @media (max-width: 768px) {
+  .bunner-title {
+    width: fit-content;
+  }
   .bunner-title h2 {
     font-size: 4rem !important;
   }
