@@ -29,8 +29,24 @@ $(document).ready(function () {
 
   // menu
 
-  $(".fa-bars").on("click", function () {
-    $(".collapse").slideDown(750);
+  let collapse = $(".collapse");
+  let bgCollapse = $("#bg-collapse");
+  let menuIcon = $(".menu-icon");
+  let menuBarOne = $(".menu-bar-one");
+  let menuBarTwo = $(".menu-bar-two");
+
+  menuIcon.on("click", function () {
+    menuBarOne.toggleClass("menu-bar-one-open");
+    menuBarTwo.toggleClass("menu-bar-two-open");
+    bgCollapse.toggleClass("bg-collapse");
+    collapse.toggleClass("collapse-open");
+  });
+
+  bgCollapse.on("click", function () {
+    collapse.removeClass("collapse-open");
+    menuBarOne.removeClass("menu-bar-one-open");
+    menuBarTwo.removeClass("menu-bar-two-open");
+    bgCollapse.removeClass("bg-collapse");
   });
 
   $(".fa-times").on("click", function () {
@@ -65,7 +81,10 @@ $(document).ready(function () {
 
   $(".navbar-nav a").on("click", function () {
     if ($(window).width() < 768) {
-      $(".collapse").slideUp(500);
+      menuBarOne.toggleClass("menu-bar-one-open");
+      menuBarTwo.toggleClass("menu-bar-two-open");
+      bgCollapse.toggleClass("bg-collapse");
+      collapse.toggleClass("collapse-open");
     }
   });
 
@@ -81,7 +100,7 @@ $(document).ready(function () {
   });
   btn.on("click", function (e) {
     e.preventDefault();
-    $("html, body").animate({ scrollTop: 0 }, "2000");
+    $("html, body").animate({ scrollTop: 0 }, 2000);
   });
 
   // clock
@@ -118,23 +137,22 @@ $(document).ready(function () {
   // }
 });
 
-// counter
+// counter Statistics of world
 var a = 0;
 $(window).scroll(function () {
-  var oTop = $("#counter").offset().top - window.innerHeight;
+  var oTop = $("#counter-world").offset().top - window.innerHeight;
   if (a == 0 && $(window).scrollTop() > oTop) {
-    $(".counter-value").each(function () {
+    $(".counter-value-world").each(function () {
       var $this = $(this),
-        countTo = $this.attr("data-count");
+        countTo = $this.attr("data-countWorld");
       $({
         countNum: $this.text(),
       }).animate(
         {
           countNum: countTo,
         },
-
         {
-          duration: 2000,
+          duration: 7500,
           easing: "swing",
           step: function () {
             $this.text(Math.floor(this.countNum));
@@ -147,5 +165,112 @@ $(window).scroll(function () {
       );
     });
     a = 1;
+  }
+});
+
+// counter Statistics of iran
+var b = 0;
+$(window).scroll(function () {
+  var oTop = $("#counter-Iran").offset().top - window.innerHeight;
+  if (b == 0 && $(window).scrollTop() > oTop) {
+    $(".counter-value-Iran").each(function () {
+      var $this = $(this),
+        countTo = $this.attr("data-countIran");
+      $({
+        countNum: $this.text(),
+      }).animate(
+        {
+          countNum: countTo,
+        },
+
+        {
+          duration: 10000,
+          easing: "swing",
+          step: function () {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function () {
+            $this.text(this.countNum);
+            // alert("finished");
+          },
+        }
+      );
+    });
+    b = 1;
+  }
+});
+
+let myEelement = $(".info-corona .col-12");
+
+$(window).scroll(function () {
+  var hT = myEelement.offset().top,
+    hH = myEelement.outerHeight(),
+    wH = $(window).height(),
+    wS = $(this).scrollTop();
+  // console.log(hT - wH, wS);
+  if (wS > hT + hH - wH) {
+    myEelement.addClass("animate__backInUp");
+  }
+});
+// another element
+
+let picThinkSec = $("section.picThink");
+
+$(window).scroll(function () {
+  var hT = picThinkSec.offset().top,
+    hH = picThinkSec.outerHeight(),
+    wH = $(window).height(),
+    wS = $(this).scrollTop();
+  if (wS > hT + hH - wH) {
+    picThinkSec.addClass("animate__slideInUp");
+  }
+});
+
+let picThinkTitle = $("section.picThink .col-12");
+
+$(window).scroll(function () {
+  var hT = picThinkTitle.offset().top,
+    hH = picThinkTitle.outerHeight(),
+    wH = $(window).height(),
+    wS = $(this).scrollTop();
+  if (wS > hT + hH - wH) {
+    picThinkTitle.addClass("animate__slideInUp");
+  }
+});
+
+let picThink = $("section.picThink .col-6");
+
+$(window).scroll(function () {
+  var hT = picThink.offset().top,
+    hH = picThink.outerHeight(),
+    wH = $(window).height(),
+    wS = $(this).scrollTop();
+  if (wS > hT + hH - wH) {
+    picThink.addClass("animate__slideInUp");
+  }
+});
+
+//
+
+let secNewsTitle = $("section#news .col-12 .section-title");
+
+$(window).scroll(function () {
+  var hT = secNewsTitle.offset().top,
+    hH = secNewsTitle.outerHeight(),
+    wH = $(window).height(),
+    wS = $(this).scrollTop();
+  if (wS > hT + hH - wH) {
+    secNewsTitle.addClass("animate__slideInUp");
+  }
+});
+
+let cardNews = $("section#news");
+$(window).scroll(function () {
+  var hT = cardNews.offset().top,
+    hH = cardNews.outerHeight(),
+    wH = $(window).height(),
+    wS = $(this).scrollTop();
+  if (wS > hT + hH - wH) {
+    cardNews.addClass("animate__fadeInUp");
   }
 });

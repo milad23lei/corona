@@ -10,14 +10,11 @@
     <link rel="icon" type="image/ico" href="assets/image/corona-logo.ico" />
     <link rel="stylesheet" href="assets/css/Style.css" />
     <link rel="stylesheet" href="assets/css/EnglishStyle.css" />
-    <meta name="keywords" content="کرونا چیست , covid-19 , ویروس کرونا , راه های پیشگیری ویروس کرونا , آمار کرونا , کرونا چگونه منتقل میشود ,کوید 19 , وضعیت کرونای ایران">
+    <meta name="keywords" content="کرونا چیست , covid-19 , ویروس کرونا , راه های پیشگیری ویروس کرونا , آمار کرونا , کرونا چگونه منتقل میشود ,کوید 19 , وضعیت کرونای ایران" />
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
     <!-- Jquiry -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- AOS  -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Map Js -->
     <script src="assets/Js/mapdata.js"></script>
     <script src="assets/Js/worldmap.js"></script>
@@ -30,12 +27,17 @@
         $(".loader").fadeOut("slow");
       });
     </script>
+    <!-- Animate Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Lottie Animation URL -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
 
   <body dir="ltr" data-spy="scroll" data-target="#navbar">
     <!-----------------------------------------------------------
                             ==>loader<==
     ------------------------------------------------------------->
+
     <section class="loader">
       <div class="circle-animate text-center">
         <div>
@@ -53,6 +55,7 @@
         </div>
       </div>
     </section>
+
     <!-----------------------------------------------------------
                             ==>Menu<==
     ------------------------------------------------------------->
@@ -62,10 +65,15 @@
         <nav class="navbar navbar-expand-lg d-flex align-items-center justify-content-center" id="navbar">
           <div class="ml-0 ml-lg-5 ml-xl-5 logo-site d-flex align-items-center justify-content-between">
             <a class="navbar-brand" href="#"><img src="assets/image/logo-virus-en.png" width="75" class="img-fluid" alt="logo virus" /></a>
-            <i class="fa fa-bars d-block d-xl-none d-lg-none" aria-hidden="true"></i>
+            <div class="menu-icon d-block d-lg-none d-xl-none">
+              <div>
+                <span class="menu-bar-one"></span>
+                <span class="menu-bar-two"></span>
+              </div>
+            </div>
           </div>
-
-          <div class="collapse navbar-collapse p-4 p-lg-0 p-xl-0">
+          <div id="bg-collapse"></div>
+          <div class="collapse navbar-collapse collapse-close">
             <div class="box d-block d-lg-none d-xl-none">
               <div></div>
               <div></div>
@@ -76,30 +84,29 @@
               <div></div>
               <div></div>
             </div>
-            <div class="d-flex align-items-center justify-content-around p-3 my-4 d-block d-lg-none d-xl-none">
+            <div class="d-flex align-items-center justify-content-around d-block d-lg-none d-xl-none">
               <a class="navbar-brand" href="#"><img src="assets/image/logo-virus-en.png" width="75" class="img-fluid" alt="logo virus" /></a>
-              <i class="fa fa-times text-white" aria-hidden="true"></i>
             </div>
             <ul class="navbar-nav text-left mt-2 mt-lg-0">
-              <li class="nav-item active">
+              <li class="nav-item text-center active">
                 <a class="nav-link active" href="#news">
                   <i class="fas fa-newspaper mr-2"></i>
                   News <span class="sr-only">(current)</span>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item text-center">
                 <a class="nav-link" href="#statistic">
                   <i class="fas fa-chart-line mr-2"></i>
                   Statistics
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item text-center">
                 <a class="nav-link" href="#symptoms">
                   <i class="fas fa-vial mr-2"></i>
                   Symptoms
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item text-center">
                 <a class="nav-link" href="#ways-of-prevention">
                   <i class="fas fa-user-shield mr-2"></i>
                   Prevention
@@ -107,7 +114,7 @@
               </li>
             </ul>
 
-            <div class="mr-0 ml-lg-3 ml-xl-3">
+            <div class="mr-0 ml-lg-3 ml-xl-3 d-none d-lg-block d-xl-block">
               <ul class="navbar-nav text-left">
                 <li class="dropdown">
                   <i class="fas fa-globe-americas text-light"></i>
@@ -142,7 +149,7 @@
               </ul>
             </div>
 
-            <div>
+            <div class="d-none d-lg-block d-xl-block">
               <ul class="navbar-nav text-left">
                 <li class="nav-item mt-2 mt-lg-0 mt-xl-0">
                   <!-- <a href="#"  class="nav-link"> -->
@@ -188,7 +195,6 @@
     ------------------------------------------------------------->
 
     <main>
-
       <!-----------btn top----------->
 
       <div class="btn-top">
@@ -197,7 +203,7 @@
 
       <!------------bunner------------>
 
-      <section class="bunner">
+      <section class="bunner" id="dvContent">
         <div class="container-fluid">
           <div class="row">
             <div class="col-12 p-0">
@@ -212,43 +218,30 @@
                 <div></div>
               </div>
               <div class="wave"></div>
-              <div class="bunner-keeper-element">
-                <div data-aos="fade-up" data-aos-duration="2500" class="img-person-bunner">
-                  <img src="assets/image/bunner-image-person.png" class="img-fluid" alt="bunner image" />
+              <div class="bunner-keeper-element w-100 text-center d-flex flex-column align-items-center justify-content-center">
+                <div class="bunner-title">
+                  <h2 class="text-light">Covid-19</h2>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="2500" class="img-virus-bunner">
+                <div class="img-person-bunner d-flex align-items-center justify-content-around w-100 mt-5 m-lg-2 m-xl-2">
+                  <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_wv4mTG.json" class="img-fluid img-person-bunner-content" background="transparent" speed="1" loop autoplay></lottie-player>
+                  <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_nmx1GJ.json" background="transparent" class="img-fluid d-none d-lx-block d-lg-block" style="width: 370px; height: 370px" speed="1.25" loop autoplay></lottie-player>
+                </div>
+                <div class="img-virus-bunner">
                   <img src="assets/image/corona-virus-img1.png" class="img-fluid" width="35" alt="corona virus" />
                   <img src="assets/image/corona-virus-img1.png" class="img-fluid" width="70" alt="corona virus" />
-                </div>
-                <div data-aos="fade-up" data-aos-duration="2500" id="carousel-bunner" class="carousel slide carousel-fade d-none d-lg-block d-xl-block" data-ride="carousel" data-interval="5000">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img class="d-block" width="300" class="img-fluid" src="assets/image/carousel-bunner-img1.png" alt="First slide" />
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block" width="300" class="img-fluid" src="assets/image/carousel-bunner-img2.png" alt="Second slide" />
-                    </div>
-                    <div class="carousel-item">
-                      <img class="d-block" width="300" class="img-fluid" src="assets/image/carousel-bunner-img3.png" alt="Third slide" />
-                    </div>
-                  </div>
-                </div>
-                <div data-aos="fade-up" data-aos-duration="2500" class="bunner-title">
-                  <h2 class="text-light">Covid-19</h2>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       <!------------section1------------>
 
       <section class="my-5 info-corona">
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-title">
+              <div class="section-title">
                 <div class="d-flex align-items-center">
                   <img src="assets/image/virus.png" width="50" class="img-fluid" alt="virus" />
                   <h1 class="font-weight-bold">Corona</h1>
@@ -256,31 +249,31 @@
               </div>
             </div>
             <div class="col-12 my-4">
-              <div data-aos="fade-up" data-aos-duration="2500" class="title-text">
+              <div class="title-text">
                 <h3>What is the Corona virus?</h3>
               </div>
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-text">
+              <div class="section-text">
                 <p>Coronaviruses are a large family of viruses that can infect animals and humans. Many of the known corona viruses cause a range of respiratory infections in humans. Which range from colds to more serious illnesses such as Middle East Respiratory Syndrome (MERS) and Acute Respiratory Syndrome (SARS).The newly discovered coronavirus is the cause of Covid-19 disease</p>
               </div>
             </div>
             <div class="bg-section-img">
-              <img src="assets/image/corona-virus-img2.png" data-aos="fade-up" data-aos-duration="2500" class="img-fluid" alt="corona virus " />
+              <img src="assets/image/corona-virus-img2.png" class="img-fluid" alt="corona virus " />
             </div>
             <div class="col-12">
-              <div data-aos="fade-up" data-aos-duration="2500" class="title-text">
+              <div class="title-text">
                 <h3>What is Covid-19?</h3>
               </div>
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-text">
+              <div class="section-text">
                 <p>The newly discovered coronavirus causes Covid-19 infectious disease. The emerging virus and its disease were unknown until the recent outbreak in December 2019 in Wuhan, China.</p>
               </div>
             </div>
             <div class="col-12">
-              <div data-aos="fade-up" data-aos-duration="2500" class="title-text">
+              <div class="title-text">
                 <h3>How is Covid-19 transmitted?</h3>
               </div>
             </div>
             <div class="col-12 mt-4 d-flex flex-column-reverse flex-lg-row flex-xl-row">
-              <div data-aos="fade-up" data-aos-duration="2500" class="col-12 col-lg-8 col-xl-8 p-0">
+              <div class="col-12 col-lg-8 col-xl-8 p-0">
                 <div class="section-text">
                   <p class="mt-3">
                     Other people may get the disease from someone who has Covid-19. It is possible to transmit Covid-19 from sick people (carriers of the virus) to healthy people. The disease can be spread to others through droplets that are spread around the mouth and nose of a person with Covid-19 by coughing or exhaling. The disease can be spread to others through droplets that are spread around the mouth and nose of a person with Covid-19 by coughing or exhaling. These droplets are spread on
@@ -288,19 +281,19 @@
                   </p>
                 </div>
               </div>
-              <div data-aos="fade-up" data-aos-duration="2500" class="col-12 col-lg-4 col-xl-4">
+              <div class="col-12 col-lg-4 col-xl-4">
                 <div>
                   <img src="assets/image/person-corona-virus1.png" class="img-fluid" alt="corona " />
                 </div>
               </div>
             </div>
             <div class="col-12">
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-text">
+              <div class="section-text">
                 <p>It is also possible to get cough drops or exhale from a person with Covid-19. For this reason, it is important to stay at least 1 meter (or 3 feet) away from the person with Covid-19.. The World Health Organization (WHO) is constantly evaluating ongoing research into the ways in which Covid-19 is transmitted and will continue to announce the latest findings.</p>
               </div>
             </div>
-            <div class="col-12 ">
-              <div data-aos="fade-up" data-aos-duration="2500">
+            <div class="col-12">
+              <div>
                 <small class="text-muted">Source : <a href="https://www.who.int/">World Health Organization</a></small>
               </div>
             </div>
@@ -314,7 +307,7 @@
         <div class="container-fluid p-0">
           <div class="row">
             <div class="col-12 my-3">
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-title text-right my-4">
+              <div class="section-title text-right my-4">
                 <div class="mr-5 w-100 text-center">
                   <h1 class="mb-4">Photo and pause</h1>
                   <div class="animation-bar w-100"></div>
@@ -332,32 +325,32 @@
               <div></div>
             </div>
             <div class="col-6 col-lg-4 col-xl-4 text-center my-5">
-              <div data-aos="fade-up" data-aos-duration="2500">
+              <div>
                 <img src="assets/image/mask-img1.png" width="175" class="img-fluid" alt="mask img" />
               </div>
             </div>
             <div class="col-6 col-lg-4 col-xl-4 text-center my-5">
-              <div data-aos="fade-up" data-aos-duration="2500">
+              <div>
                 <img src="assets/image/mask-img2.png" width="175" class="img-fluid" alt="mask img" />
               </div>
             </div>
             <div class="col-6 col-lg-4 col-xl-4 text-center my-5">
-              <div data-aos="fade-up" data-aos-duration="2500">
+              <div>
                 <img src="assets/image/mask-img3.png" width="175" class="img-fluid" alt="mask img" />
               </div>
             </div>
             <div class="col-6 col-lg-4 col-xl-4 text-center my-5">
-              <div data-aos="fade-up" data-aos-duration="2500">
+              <div>
                 <img src="assets/image/mask-img4.png" width="175" class="img-fluid" alt="mask img" />
               </div>
             </div>
             <div class="col-6 col-lg-4 col-xl-4 text-center my-5">
-              <div data-aos="fade-up" data-aos-duration="2500">
+              <div>
                 <img src="assets/image/mask-img5.png" width="175" class="img-fluid" alt="mask img" />
               </div>
             </div>
             <div class="col-6 col-lg-4 col-xl-4 text-center my-5">
-              <div data-aos="fade-up" data-aos-duration="2500">
+              <div>
                 <img src="assets/image/mask-img6.png" width="175" class="img-fluid" alt="mask img" />
               </div>
             </div>
@@ -371,7 +364,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-title text-right my-4">
+              <div class="section-title text-right my-4">
                 <div class="mr-5 w-100 text-center">
                   <h1 class="mb-4">News</h1>
                   <div class="animation-bar w-100"></div>
@@ -379,9 +372,9 @@
               </div>
             </div>
             <div class="d-flex flex-column flex-lg-row flex-xl-row justify-content-center align-items-center">
-              <div data-aos="fade-up" data-aos-duration="2500" class="col-12 col-lg-3 col-xl-3 my-4">
+              <div class="col-12 col-lg-3 col-xl-3 my-4">
                 <div class="card">
-                  <div data-aos="fade-up" class="ticked">
+                  <div class="ticked">
                     <div class="ticked-shape">
                       <p class="text-light text-center">New</p>
                     </div>
@@ -413,16 +406,16 @@
                       <h6>Infection of 250 people with corona in one day in Fars</h6>
                     </div>
                     <div class="card-text my-4">
-                      <p class="text-muted">Shiraz Deputy Minister of Medical Sciences said: "During the last 24 hours, 250 patients were hospitalized, which is beyond capacity, and according to the latest statistics, 80,674 people are currently suffering from coronary heart disease."</p>
+                      <p class="text-muted text-left">Shiraz Deputy Minister of Medical Sciences said: "During the last 24 hours, 250 patients were hospitalized, which is beyond capacity, and according to the latest statistics, 80,674 people are currently suffering from coronary heart disease."</p>
                     </div>
-                    <div class="source-news ">
+                    <div class="source-news">
                       <div>
-                      <small class="text-muted">Source : <a target="0" href="https://www.mehrnews.com/tag/%D9%88%DB%8C%D8%B1%D9%88%D8%B3+%DA%A9%D8%B1%D9%88%D9%86%D8%A7">Khabar ghozari Mehr</a></small>
+                        <small class="text-muted">Source : <a target="0" href="https://www.mehrnews.com/tag/%D9%88%DB%8C%D8%B1%D9%88%D8%B3+%DA%A9%D8%B1%D9%88%D9%86%D8%A7">Khabar ghozari Mehr</a></small>
                       </div>
                     </div>
                   </div>
                   <div class="news-card-btn">
-                    <a target="0" href="https://www.mehrnews.com/news/5057783/%D8%A7%D8%A8%D8%AA%D9%84%D8%A7%DB%8C-%DB%B2%DB%B5%DB%B0-%D9%86%D9%81%D8%B1-%D8%A8%D9%87-%DA%A9%D8%B1%D9%88%D9%86%D8%A7-%D8%B7%DB%8C-%DB%8C%DA%A9-%D8%B1%D9%88%D8%B2-%D8%AF%D8%B1-%D9%81%D8%A7%D8%B1%D8%B3-%DB%B2%DB%B0-%D9%86%D9%81%D8%B1-%D8%AF%DB%8C%DA%AF%D8%B1-%D8%AC%D8%A7%D9%86-%D8%A8%D8%A7%D8%AE%D8%AA%D9%86%D8%AF">
+                    <a target="0" href="news1EN.html">
                       <button data-hover=" Click!" class="btn-primary">
                         <div>View news</div>
                       </button>
@@ -430,9 +423,9 @@
                   </div>
                 </div>
               </div>
-              <div data-aos="fade-up" data-aos-duration="2500" class="col-12 col-lg-3 col-xl-3 my-4">
+              <div class="col-12 col-lg-3 col-xl-3 my-4">
                 <div class="card">
-                  <div data-aos="fade-up" class="ticked">
+                  <div class="ticked">
                     <div class="ticked-shape">
                       <p class="text-light text-center">New</p>
                     </div>
@@ -462,16 +455,16 @@
                       <h6>The latest corona statistics in Iraq</h6>
                     </div>
                     <div class="card-text my-4">
-                      <p class="text-muted">The Iraqi Ministry of Health announced: In the last 24 hours, 4,510 more cases of coronary heart disease have been registered in Iraq, and as a result, the number of people infected with the virus in this country has increased to 459,908.</p>
+                      <p class="text-muted text-left">The Iraqi Ministry of Health announced: In the last 24 hours, 4,510 more cases of coronary heart disease have been registered in Iraq, and as a result, the number of people infected with the virus in this country has increased to 459,908.</p>
                     </div>
-                    <div class="source-news ">
+                    <div class="source-news">
                       <div>
-                      <small class="text-muted">Source : <a target="0" href="https://www.mehrnews.com/tag/%D9%88%DB%8C%D8%B1%D9%88%D8%B3+%DA%A9%D8%B1%D9%88%D9%86%D8%A7">  Khabar ghozari Mehr</a></small>
+                        <small class="text-muted">Source : <a target="0" href="https://www.mehrnews.com/tag/%D9%88%DB%8C%D8%B1%D9%88%D8%B3+%DA%A9%D8%B1%D9%88%D9%86%D8%A7"> Khabar ghozari Mehr</a></small>
                       </div>
                     </div>
                   </div>
                   <div class="news-card-btn">
-                    <a target="0" href="https://www.mehrnews.com/news/5057823/%D8%AC%D8%AF%DB%8C%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%A2%D9%85%D8%A7%D8%B1-%DA%A9%D8%B1%D9%88%D9%86%D8%A7-%D8%AF%D8%B1-%D8%B9%D8%B1%D8%A7%D9%82">
+                    <a target="0" href="news2EN.html">
                       <button data-hover=" Click!" class="btn-primary">
                         <div>View news</div>
                       </button>
@@ -479,9 +472,9 @@
                   </div>
                 </div>
               </div>
-              <div data-aos="fade-up" data-aos-duration="2500" class="col-12 col-lg-3 col-xl-3 my-4">
+              <div class="col-12 col-lg-3 col-xl-3 my-4">
                 <div class="card">
-                  <div data-aos="fade-up" class="ticked">
+                  <div class="ticked">
                     <div class="ticked-shape">
                       <p class="text-light text-center">New</p>
                     </div>
@@ -508,19 +501,19 @@
                       </div>
                     </div>
                     <div class="card-title my-4">
-                      <h6>The number of coronary heart disease in women tripled</h6>
+                      <h6>The number of people with coronary heart disease in Khatam tripled</h6>
                     </div>
                     <div class="card-text my-4">
-                      <p class="text-muted m-0">The governor of Khatam said: the situation of Khatam city is critical and the number of patients with coronary artery has tripled since the beginning of October, so that between 15 and 3 people are added to the number of patients daily.</p>
+                      <p class="text-muted m-0 text-left">The governor of Khatam said: the situation of Khatam city is critical and the number of patients with coronary artery has tripled since the beginning of October, so that between 15 and 3 people are added to the number of patients daily.</p>
                     </div>
-                    <div class="source-news ">
+                    <div class="source-news">
                       <div>
-                      <small class="text-muted">Source : <a target="0" href="https://www.mehrnews.com/tag/%D9%88%DB%8C%D8%B1%D9%88%D8%B3+%DA%A9%D8%B1%D9%88%D9%86%D8%A7"> Khabar ghozari Mehr</a></small>
+                        <small class="text-muted">Source : <a target="0" href="https://www.mehrnews.com/tag/%D9%88%DB%8C%D8%B1%D9%88%D8%B3+%DA%A9%D8%B1%D9%88%D9%86%D8%A7"> Khabar ghozari Mehr</a></small>
                       </div>
                     </div>
                   </div>
                   <div class="news-card-btn">
-                    <a target="0" href="https://www.mehrnews.com/news/5057781/%D8%A2%D9%85%D8%A7%D8%B1-%D9%85%D8%A8%D8%AA%D9%84%D8%A7%DB%8C%D8%A7%D9%86-%D8%A8%D9%87-%DA%A9%D8%B1%D9%88%D9%86%D8%A7-%D8%AF%D8%B1-%D8%AE%D8%A7%D8%AA%D9%85-%DB%B3-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1-%D8%B4%D8%AF">
+                    <a target="0" href="new3EN.html">
                       <button data-hover=" Click!" class="btn-primary">
                         <div>View news</div>
                       </button>
@@ -529,7 +522,7 @@
                 </div>
               </div>
             </div>
-            <div data-aos="fade-up" data-aos-duration="2500" class="col-12">
+            <div class="col-12">
               <div class="view-all-btn float-right mr-0 mr-xl-5 mr-lg-5 my-3">
                 <a target="0" href="https://www.mehrnews.com/archive?pi=1&kw=%D9%88%DB%8C%D8%B1%D9%88%D8%B3%20%DA%A9%D8%B1%D9%88%D9%86%D8%A7&ms=0&dy=6&mn=8&yr=1399">
                   <button class="btn-view">
@@ -549,7 +542,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-title text-right my-4">
+              <div class="section-title text-right my-4">
                 <div class="mr-5 w-100 text-center">
                   <h1 class="mb-4">Statistics</h1>
                   <div class="animation-bar w-100"></div>
@@ -557,33 +550,33 @@
               </div>
             </div>
             <div class="col-12">
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-title text-right my-4">
+              <div class="section-title text-right my-4">
                 <div class="mr-5 w-25 text-center">
                   <h3 class="mb-4">World</h3>
                 </div>
               </div>
             </div>
-            <div class="col-12 w-100" data-aos="fade-up" data-aos-duration="2500">
+            <div class="col-12 w-100">
               <div id="map" class="mx-auto"></div>
             </div>
-            <div data-aos="fade-up" data-aos-duration="2500" id="counter" class="d-flex flex-column flex-lg-row flex-xl-row justify-content-center w-100 my-5">
-              <div data-aos="fade-up" data-aos-duration="2500" class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
+            <div id="counter-world" class="d-flex flex-column flex-lg-row flex-xl-row justify-content-center w-100 my-5">
+              <div class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
                 <div class="counter-keeper counter-card-1">
-                  <h5 class="counter-value border-bottom border-light" data-count="81735201">81625201</h5>
+                  <h5 class="counter-value-world border-bottom border-light" data-countWorld="81735201">81735000</h5>
                   <div>person</div>
                   <h3>Infected</h3>
                 </div>
               </div>
-              <div data-aos="fade-up" data-aos-duration="2500" class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
+              <div class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
                 <div class="counter-keeper counter-card-2">
-                  <h5 class="counter-value border-bottom border-light" data-count="1783100">1083100</h5>
+                  <h5 class="counter-value-world border-bottom border-light" data-countWorld="1783100">1783000</h5>
                   <div>person</div>
                   <h3>Deceased</h3>
                 </div>
               </div>
-              <div data-aos="fade-up" data-aos-duration="2500" class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
+              <div class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
                 <div class="counter-keeper counter-card-3">
-                  <h5 class="counter-value border-bottom border-light" data-count="57878464">56778464</h5>
+                  <h5 class="counter-value-world border-bottom border-light" data-countWorld="57878464">57878000</h5>
                   <div>person</div>
                   <h3>has improved</h3>
                 </div>
@@ -597,7 +590,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-title text-right my-4">
+              <div class="section-title text-right my-4">
                 <div class="mr-5 w-100 text-center">
                   <h3 class="mb-4">Top ten countries</h3>
                 </div>
@@ -607,7 +600,7 @@
               <div class="bar-chart bar-chart-vertical bar-chart-two d-flex flex-row-reverse justify-content-center">
                 <div class="bar-one bar-container" data-toggle="tooltip" data-placement="top" title="18,917,152 Infected">
                   <div class="bar" data-toggle="modal" data-target="#model-circle-chart-info "></div>
-                 <div class="modal fade" id="model-circle-chart-info" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                  <div class="modal fade" id="model-circle-chart-info" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                       <div class="modal-content bg-dark">
                         <div class="modal-header">
@@ -1346,13 +1339,12 @@
                 </div>
               </div>
             </div>
-
-            <div class="col-12 my-5 d-flex justify-content-center my-4" data-aos="fade-up" data-aos-duration="2500">
+            <div class="col-12 my-5 d-flex justify-content-center my-4">
               <div class="text-info-sec">
                 <small class="text-muted">Click on the columns to see more information!</small>
               </div>
             </div>
-            <div data-aos="fade-up" data-aos-duration="2500" class="col-12">
+            <div class="col-12">
               <div class="view-all-btn float-right mr-xl-5 mr-lg-5 my-3">
                 <a href="#">
                   <button class="btn-view">
@@ -1369,39 +1361,38 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-title text-right my-4">
+              <div class="section-title text-right my-4">
                 <div class="mr-5 w-25 text-center">
                   <h3 class="mb-4">Iran</h3>
                 </div>
               </div>
             </div>
             <div class="col-12 p-0 holder-iran-statistics">
-              <div data-aos="fade-up" data-aos-duration="2500" id="counter" class="d-flex flex-column flex-lg-row flex-xl-row justify-content-center w-100 my-5">
-                <div data-aos="fade-up" data-aos-duration="2500" class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
+              <div id="counter-Iran" class="d-flex flex-column flex-lg-row flex-xl-row justify-content-center w-100 my-5">
+                <div class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
                   <div class="counter-keeper counter-card-1">
-                    <h5 class="counter-value border-bottom border-light" data-count="1177554">1165554</h5>
+                    <h5 class="counter-value-Iran border-bottom border-light" data-countIran="1177554">1165554</h5>
                     <div>person</div>
                     <h3>Infected</h3>
                   </div>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="2500" class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
+                <div class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
                   <div class="counter-keeper counter-card-2">
-                    <h5 class="counter-value border-bottom border-light" data-count="54156">52156</h5>
+                    <h5 class="counter-value-Iran border-bottom border-light" data-countIran="54156">52156</h5>
                     <div>person</div>
                     <h3>Deceased</h3>
                   </div>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="2500" class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
+                <div class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
                   <div class="counter-keeper counter-card-3">
-                    <h5 class="counter-value border-bottom border-light" data-count="914194">909194</h5>
+                    <h5 class="counter-value-Iran border-bottom border-light" data-countIran="914194">909194</h5>
                     <div>person</div>
                     <h3>has improved</h3>
                   </div>
                 </div>
               </div>
-
               <div class="d-flex flex-column flex-xl-row flex-lg-row align-items-center justify-content-center container-svg my-4">
-                <svg data-aos="fade-up" data-aos-duration="2500" width="654.51147" height="593.71021">
+                <svg width="654.51147" height="593.71021">
                   <path
                     data-toggle="tooltip"
                     data-placement="top"
@@ -1654,22 +1645,22 @@
                 </svg>
 
                 <div class="mt-auto map-guide">
-                  <div class="map-guide-title text-left" >
+                  <div class="map-guide-title text-left">
                     <h5>map Guide</h5>
                   </div>
-                  <div class="map-guide-info d-flex align-items-center my-2" >
+                  <div class="map-guide-info d-flex align-items-center my-2">
                     <div class="color1 mx-2"></div>
                     <div>
                       <p class="m-0">Provinces with the lowest white cities</p>
                     </div>
                   </div>
-                  <div class="map-guide-info d-flex align-items-center my-2" >
+                  <div class="map-guide-info d-flex align-items-center my-2">
                     <div class="color2 mx-2"></div>
                     <div>
                       <p class="m-0">Provinces without white counties</p>
                     </div>
                   </div>
-                  <div class="map-guide-info d-flex align-items-center my-2" >
+                  <div class="map-guide-info d-flex align-items-center my-2">
                     <div class="color3 mx-2"></div>
                     <div>
                       <p class="m-0">Provinces of dangerous situation</p>
@@ -1688,7 +1679,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-title text-right my-4">
+              <div class="section-title text-right my-4">
                 <div class="mr-5 w-100 text-center">
                   <h1 class="mb-4">Symptoms</h1>
                   <div class="animation-bar w-100"></div>
@@ -1774,7 +1765,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12 my-3">
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-title text-right my-4">
+              <div class="section-title text-right my-4">
                 <div class="mr-5 w-100 text-center">
                   <h1 class="mb-4">Prevention</h1>
                   <div class="animation-bar w-100"></div>
@@ -1787,38 +1778,38 @@
               </div>
             </div>
             <div class="col-12 ways-of-prevention-inner p-5">
-              <div data-aos="fade-up" data-aos-duration="2500" class="ways-of-prevention-titel text-center my-4">
+              <div class="ways-of-prevention-titel text-center my-4">
                 <h1>prevention</h1>
               </div>
-              <div data-aos="fade-up" data-aos-duration="2500" class="ways-of-prevention-line text-center d-none d-xl-block d-lg-block">
+              <div class="ways-of-prevention-line text-center d-none d-xl-block d-lg-block">
                 <img src="assets/image/line.png" class="img-fluid" width="1200" alt="line" />
               </div>
               <div class="ways-of-prevention-img d-flex flex-column flex-lg-row flex-xl-row align-items-center justify-content-around">
-                <div data-aos="fade-up" data-aos-duration="2500" class="ways-of-prevention-card d-flex flex-column align-items-center my-3">
+                <div class="ways-of-prevention-card d-flex flex-column align-items-center my-3">
                   <img src="assets/image/prevention-img1.png" class="img-fluid" width="150" alt="prevention image" />
                   <div class="my-3 text-dark">
                     <h5>Protect vulnerable people</h5>
                   </div>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="2500" class="ways-of-prevention-card d-flex flex-column align-items-center my-3">
+                <div class="ways-of-prevention-card d-flex flex-column align-items-center my-3">
                   <img src="assets/image/prevention-img2.png" class="img-fluid" width="150" alt="prevention image" />
                   <div class="my-3 text-dark">
                     <h5>Wash your hands</h5>
                   </div>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="2500" class="ways-of-prevention-card d-flex flex-column align-items-center my-3">
+                <div class="ways-of-prevention-card d-flex flex-column align-items-center my-3">
                   <img src="assets/image/prevention-img3.png" class="img-fluid" width="150" alt="prevention image" />
                   <div class="my-3 text-dark">
                     <h5>Stay at home</h5>
                   </div>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="2500" class="ways-of-prevention-card d-flex flex-column align-items-center my-3">
+                <div class="ways-of-prevention-card d-flex flex-column align-items-center my-3">
                   <img src="assets/image/prevention-img4.png" class="img-fluid" width="150" alt="prevention image" />
                   <div class="my-3 text-dark">
                     <h5>Masking</h5>
                   </div>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="2500" class="ways-of-prevention-card d-flex flex-column align-items-center my-3">
+                <div class="ways-of-prevention-card d-flex flex-column align-items-center my-3">
                   <img src="assets/image/prevention-img5.png" class="img-fluid" width="150" alt="prevention image" />
                   <div class="my-3 text-dark">
                     <h5>Disinfection</h5>
@@ -1846,7 +1837,7 @@
         <div class="container-fluid">
           <div class="row d-flex align-items-center">
             <div class="col-12 my-3">
-              <div data-aos="fade-up" data-aos-duration="2500" class="section-title text-right my-4">
+              <div class="section-title text-right my-4">
                 <div class="mr-5 w-100 text-center">
                   <h1 class="mb-4">Government actions</h1>
                   <div class="animation-bar w-100"></div>
@@ -1854,7 +1845,7 @@
               </div>
             </div>
             <div class="col-12 col-lg-6 col-xl-4 text-center my-3">
-              <div data-aos="fade-up" data-aos-duration="2500" class="government-action-card">
+              <div class="government-action-card">
                 <div class="government-action-card-img">
                   <img src="assets/image/government-action6.png" class="img-fluid" width="250" alt="government action image" />
                 </div>
@@ -1864,7 +1855,7 @@
               </div>
             </div>
             <div class="col-12 col-lg-6 col-xl-4 text-center my-3">
-              <div data-aos="fade-up" data-aos-duration="2500" class="government-action-card">
+              <div class="government-action-card">
                 <div class="government-action-card-img">
                   <img src="assets/image/government-action5.png" class="img-fluid" width="250" alt="government action image" />
                 </div>
@@ -1874,7 +1865,7 @@
               </div>
             </div>
             <div class="col-12 col-lg-6 col-xl-4 text-center my-3">
-              <div data-aos="fade-up" data-aos-duration="2500" class="government-action-card">
+              <div class="government-action-card">
                 <div class="government-action-card-img">
                   <img src="assets/image/government-action2.png" class="img-fluid" width="250" alt="government action image" />
                 </div>
@@ -1884,7 +1875,7 @@
               </div>
             </div>
             <div class="col-12 col-lg-6 col-xl-4 text-center my-3">
-              <div data-aos="fade-up" data-aos-duration="2500" class="government-action-card">
+              <div class="government-action-card">
                 <div class="government-action-card-img">
                   <img src="assets/image/government-action3.png" class="img-fluid" width="250" alt="government action image" />
                 </div>
@@ -1894,7 +1885,7 @@
               </div>
             </div>
             <div class="col-12 col-lg-6 col-xl-4 text-center my-3">
-              <div data-aos="fade-up" data-aos-duration="2500" class="government-action-card">
+              <div class="government-action-card">
                 <div class="government-action-card-img">
                   <img src="assets/image/government-action4.png" class="img-fluid" width="250" alt="government action image" />
                 </div>
@@ -1904,7 +1895,7 @@
               </div>
             </div>
             <div class="col-12 col-lg-6 col-xl-4 text-center my-3">
-              <div data-aos="fade-up" data-aos-duration="2500" class="government-action-card">
+              <div class="government-action-card">
                 <div class="government-action-card-img">
                   <img src="assets/image/government-action1.png" class="img-fluid" width="250" alt="government action image" />
                 </div>
@@ -1922,8 +1913,7 @@
                              ==>Footer<==
     ------------------------------------------------------------->
 
-    <footer>
-      <div class="shape-footer d-none d-xl-block"></div>
+    <footer id="footer-of-body">
       <div class="box">
         <div></div>
         <div></div>
@@ -1934,91 +1924,63 @@
         <div></div>
         <div></div>
       </div>
-      <section class="footer-navbar-sec">
+      <section class="footer-navbar-sec p-3">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-12 d-flex justify-content-end mt-5 px-5">
-              <div class="footer-navbar w-100">
-                <ul class="nav nav-tabs nav-justified">
-                  <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#archive">
-                      <i class="fas fa-file-archive mx-2"></i>
-                      Other topics
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#about-us">
-                      <i class="far fa-address-card mx-2"></i>
-                      about us
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#contact-us">
-                      <i class="fas fa-phone mx-2"></i>
-                      Contact us
-                    </a>
-                  </li>
-                </ul>
-
-                <div class="tab-content">
-                  <div class="tab-pane fade show active" id="archive">
-                    <div class="d-flex flex-column text-left my-3 p-0 pt-lg-5 pr-xl-5">
-                      <a href="#" class="text-light my-1 p-1">75 million people died of the plague</a>
-                      <a href="#" class="text-light my-1 p-1">10,000 deaths in 1916 from polio</a>
-                      <a href="#" class="text-light my-1 p-1">Native American population shrinks from 12 million to 235,000 due to smallpox </a>
-                      <a href="#" class="text-light my-1 p-1"> 12,000 deaths from cholera since 1991</a>
-                    </div>
-                  </div>
-                  <div class="tab-pane fade" id="about-us">
-                    <div class="d-flex flex-column flex-lg-row">
-                      <div class="text-center p-0 pt-lg-4 pt-xl-4 pr-lg-5 pr-xl-5 writer">
-                        <img src="assets/image/person-img.png" width="300" class="img-fluid rounded-circle" alt="Writer" />
-                        <h6 class="text-light my-3 border-bottom p-2">Milad Soradi</h6>
+            <div class="col-12 col-lg-4 col-xl-4 p-2">
+              <div class="archive">
+                <h4 class="text-left p-3 font-weight-bold text-light">Other topics</h4>
+                <div class="d-flex flex-column text-left">
+                  <a href="#" class="text-light my-0 p-1 my-lg-1 my-xl-1">75 million people died of the plague</a>
+                  <a href="#" class="text-light my-0 p-1 my-lg-1 my-xl-1">10,000 deaths in 1916 from polio</a>
+                  <a href="#" class="text-light my-0 p-1 my-lg-1 my-xl-1">Native American population shrinks from 12 million to 235,000 due to smallpox </a>
+                  <a href="#" class="text-light my-0 p-1 my-lg-1 my-xl-1"> 12,000 deaths from cholera since 1991</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-4 col-xl-4 p-2">
+              <div class="about-us">
+                <h4 class="text-left p-3 font-weight-bold text-light">about us</h4>
+                <p class="text-light text-left" style="line-height: 1.75">This site is to promote medical information about the newly discovered Corona virus.In the third chapter of the book of health and hygiene, which is about the prevention of diseases, for this reason, we tried to talk about the contagious and deadly corona virus and provide information about its prevention and prevention to you dear ones.</p>
+                <small class="text-light text-left d-flex">All statistics of this website are related to 2020-12-24.</small>
+                <h6 class="text-light text-center my-2 p-1">Alborz high school , Birjand</h6>
+              </div>
+            </div>
+            <div class="col-12 col-lg-4 col-xl-4 p-2">
+              <div class="contact-us">
+                <h4 class="text-left p-3 font-weight-bold text-light">Contact us</h4>
+                <div class="d-flex flex-column flex-lg-row flex-xl-row align-items-center justify-content-around">
+                  <div class="conmunicate-info text-light">
+                    <div class="d-flex flex-column flex-lg-row flex-xl-row align-items-center justify-content-start my-1">
+                      <div class="d-flex align-items-center justify-content-center">
+                        <i class="fa fa-phone p-1" aria-hidden="true"></i>
+                        <p class="mx-1 m-0 p-1">School phone number:</p>
                       </div>
-                      <div class="abute-us-text text-white   p-0 pt-lg-5 pr-xl-5">
-                        <p class="text-left">This site is to promote medical information about the newly discovered Corona virus.In the third chapter of the book of health and hygiene, which is about the prevention of diseases, for this reason, we tried to talk about the contagious and deadly corona virus and provide information about its prevention and prevention to you dear ones.</p>
-                        <small class="text-light text-left d-flex">All statistics of this website are related to 2020-12-24.</small>
-                        <h6 class="text-muted text-center my-2 p-1">Alborz high school , Birjand</h6>
-                      </div>
+                      <span class="mx-1 p-1">05632229038</span>
                     </div>
-                  </div>
-                  <div class="tab-pane fade  " id="contact-us">
-                    <div class="d-flex flex-column flex-lg-row flex-xl-row align-items=center justify-content-around">
-                      
-                        <div class="phone-school p-0 pt-lg-5 pr-xl-5 text-light">
-                          <div class="d-flex flex-column flex-lg-row flex-xl-row align-items-center justify-content-start p-2 my-2">
-                            <i class="fa fa-phone mx-2 p-1" aria-hidden="true"></i>
-                            <p class="mx-1 m-0 p-1">School phone number:</p>
-                            <span class="mx-1 p-1">05632229038</span>
-                          </div>
-                          <div class="d-flex flex-column flex-lg-row flex-xl-row align-items-center justify-content-start p-2 my-2">
-                            <i class="fas fa-map-marker-alt mx-2 p-1"></i>
-                            <p class="m-0 mx-1 p-1">Address:</p>
-                            <span class="mx-1 p-1 text-center">Birjand, Ayatollah Saeedi Gharbi St., in front of storeroom Electricity Department</span>
-                          </div>
-                          <div class="d-flex flex-column flex-lg-row flex-xl-row align-items-center justify-content-start p-2 my-2">
-                            <i class="fas fa-mobile-alt mx-2 p-1"></i>
-                            <p class="m-0 mx-1 p-1">Phone number :</p>
-                            <span class="mx-1 p-1">09037455979</span>
-                          </div>
-                          <div class="d-flex flex-column flex-lg-row flex-xl-row align-items-center justify-content-start p-2 my-2">
-                            <i class="fab fa-instagram mx-2 p-1"></i>
-                            <p class="m-0 mx-1 p-1">Instagram ID :</p>
-                            <a href="https://www.instagram.com/milad23srd/" target="0" class="text-light p-1">
-                              <p class="m-0 mx-1 border-bottom border-muted">Milad23srd</p>
-                            </a>
-                          </div>
-                        </div>
-                        <div class="mapouter mx-auto my-4 my-lg-0 my-xl-0 p-0 pt-lg-3 pt-xl-3">
-                          <div class="gmap_canvas">
-                            <iframe width="250" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q=birjand%20%D9%87%D9%86%D8%B1%D8%B3%D8%AA%D8%A7%D9%86%20%D8%A7%D9%84%D8%A8%D8%B1%D8%B2&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                            <a href="https://sites.google.com/view/maps-api-v2/mapv2"></a>
-                          </div>
-                          <div class="map-text text-light text-center">
-                            <small><a href="https://gama.ir/school/detail/53602" target="0">Alborz high school</a> </small>
-                          </div>
-                        </div>                       
-                   
+                    <div class="d-flex flex-column flex-lg-row flex-xl-row align-items-center justify-content-start my-1">
+                      <div class="d-flex align-items-center justify-content-center">
+                        <i class="fas fa-map-marker-alt p-1"></i>
+                        <p class="m-0 mx-1 p-1">Address:</p>
+                      </div>
+                      <small class="mx-1 text-center p-1"> Birjand, Ayatollah Saeedi Gharbi St., in front of storeroom Electricity Department</small>
+                    </div>
+                    <div class="d-flex flex-column flex-lg-row flex-xl-row align-items-center justify-content-start my-1">
+                      <div class="d-flex align-items-center justify-content-center">
+                        <i class="fas fa-mobile-alt p-1"></i>
+                        <p class="m-0 mx-1 p-1">Phone number :</p>
+                      </div>
+                      <span class="mx-1 p-1">09037455979</span>
+                    </div>
+                    <div class="d-flex flex-column flex-lg-row flex-xl-row align-items-center justify-content-start my-1">
+                      <div class="d-flex align-items-center justify-content-center">
+                        <i class="fab fa-instagram p-1"></i>
+                        <p class="m-0 mx-1 p-1">Instagram ID :</p>
+                      </div>
+                      <a href="https://www.instagram.com/milad23srd/" target="0" class="text-light p-1">
+                        <p class="m-0 mx-1 border-bottom border-muted">Milad23srd</p>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2026,14 +1988,9 @@
           </div>
         </div>
       </section>
-      <section class="footer-comment-sec">
+      <section class="footer-comment-sec my-1">
         <div class="container-fluid">
           <div class="row d-flex align-items-center">
-            <div class="col-12 col-lg-6 col-xl-6 p-0 d-none d-xl-block d-lg-block">
-              <div class="img-footer">
-                <img src="assets/image/img-footer.png" width="400" class="img-fluid" alt="image footer" />
-              </div>
-            </div>
             <div class="col-12 col-lg-6 col-xl-6">
               <div class="comment">
                 <div class="form-group">
@@ -2043,8 +2000,13 @@
                   <textarea name="" id="" cols="30" class="form-control mt-3" placeholder="Your text..." rows="5"></textarea>
                 </div>
                 <div class="d-flex justify-contnet-start">
-                  <button type="submit" class="btn-success btn">ُSend !</button>
+                  <button type="submit" class="btn-success btn">Send !</button>
                 </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-6 p-0 d-none d-xl-block d-lg-block">
+              <div class="img-footer">
+                <img src="assets/image/img-footer.png" width="400" class="img-fluid" alt="image footer" />
               </div>
             </div>
           </div>
@@ -2078,12 +2040,11 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 d-flex align-items-center justify-content-center">
-              <div class="m3 d-block">
+            <div class="col-12 d-flex align-items-center justify-content-center p-0 mt-2">
+              <div class="w-100 text-center">
                 <small class="text-light">All rights reserved to this website.</small>
               </div>
             </div>
-
             <div class="footer-virus-image-animate">
               <img src="assets/image/corona-virus-img5.png" class="img-fluid" width="50" alt="corona virus" />
               <img src="assets/image/corona-virus-img5.png" class="img-fluid" width="35" alt="corona virus" />
@@ -2091,7 +2052,6 @@
           </div>
         </div>
       </section>
-
       <div class="waveWrapper waveAnimation d-none d-lg-block d-xl-block">
         <div class="waveWrapperInner bgTop">
           <div class="wave waveTop" style="background-image: url('/assets/image/wave-top.png')"></div>
@@ -2109,16 +2069,24 @@
                                ==>Js<==
     ------------------------------------------------------------->
 
-    <script>
-      AOS.init();
-    </script>
-     <!---start GOFTINO code--->
-     <script type="text/javascript">
-      !function(){var a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/qt5cMR",l=localStorage.getItem("goftino");g.type="text/javascript",g.async=!0,g.referrerPolicy="no-referrer-when-downgrade",g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
+    <!---start GOFTINO code--->
+    <script type="text/javascript">
+      !(function () {
+        var a = window,
+          d = document;
+        function g() {
+          var g = d.createElement("script"),
+            s = "https://www.goftino.com/widget/qt5cMR",
+            l = localStorage.getItem("goftino");
+          (g.type = "text/javascript"), (g.async = !0), (g.referrerPolicy = "no-referrer-when-downgrade"), (g.src = l ? s + "?o=" + l : s);
+          d.getElementsByTagName("head")[0].appendChild(g);
+        }
+        "complete" === d.readyState ? g() : a.attachEvent ? a.attachEvent("onload", g) : a.addEventListener("load", g, !1);
+      })();
     </script>
     <!---end GOFTINO code--->
     <!-- main js index -->
-    <script src="assets/Js/main.js"></script>
+    <script src="assets/Js/English.js"></script>
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/5d9e8b8f08.js" crossorigin="anonymous"></script>
     <!-- bootstrap js -->
