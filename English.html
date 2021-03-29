@@ -31,6 +31,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Lottie Animation URL -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#3367D6" />
+    <meta name="apple-mobile-web-app-capale" content="yes" />
+    <meta rel="apple-mobile-web-app-title" content="CoronaVirus" />
+    <link rel="apple-touch-icon" href="/assets/image/iconPWA/icon144.png" sizes="144x144" />
+    <link rel="apple-touch-icon" href="/assets/image/iconPWA/iocn192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/assets/image/iconPWA/icon512.png" sizes="512x512" />
+    <link rel="apple-touch-startup-image" href="/assets/image/iconPWA/icon512.png" />
   </head>
 
   <body dir="ltr" data-spy="scroll" data-target="#navbar">
@@ -185,6 +194,14 @@
                 </li>
               </ul>
             </div>
+
+            <div class="btn-add mt-3 mt-lg-0 mt-xl-0">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <i class="fas fa-download text-light"></i>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
       </menu>
@@ -199,6 +216,12 @@
 
       <div class="btn-top">
         <i class="fa fa-angle-up" aria-hidden="true"></i>
+      </div>
+
+      <!-----------btn add app----------->
+
+      <div class="btn-notification" id="notification-btn">
+        <i id="notification" class="fa fa-bell" aria-hidden="true"></i>
       </div>
 
       <!------------bunner------------>
@@ -2087,6 +2110,48 @@
     <!---end GOFTINO code--->
     <!-- main js index -->
     <script src="assets/Js/English.js"></script>
+    <script src="assets/Js/app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async function () {
+        let notificationBtn = document.getElementById("notification");
+        const disableNotificationBtn = () => {
+          notificationBtn.classList.remove("fa-bell");
+          notificationBtn.classList.add("fa-bell-slash");
+        };
+
+        const enableNotificationBtn = () => {
+          notificationBtn.classList.remove("fa-bell-slash");
+          notificationBtn.classList.add("fa-bell");
+        };
+
+        notificationBtn.addEventListener("click", async (event) => {
+          event.preventDefault();
+
+          Notification.requestPermission((status) => {
+            console.log(status);
+          });
+
+          const options = {
+            body: "Thank you :)",
+            icon: "/assets/image/iconPWA/icon144.png",
+            badge: "/assets/image/badge.png",
+            dir: "ltr",
+          };
+
+          function desplayNotification() {
+            if (Notification.permission !== "granted") {
+              disableNotificationBtn();
+            } else {
+              enableNotificationBtn();
+              navigator.serviceWorker.getRegistration().then((reg) => {
+                reg.showNotification("Corona", options);
+              });
+            }
+          }
+          desplayNotification();
+        });
+      });
+    </script>
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/5d9e8b8f08.js" crossorigin="anonymous"></script>
     <!-- bootstrap js -->

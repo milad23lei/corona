@@ -25,8 +25,6 @@ $(document).ready(function () {
   scroller();
   $(window).on("scroll", scroller);
 
-  // load
-
   // menu
 
   let collapse = $(".collapse");

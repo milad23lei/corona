@@ -35,7 +35,7 @@ a {
 
 .up-scrolling {
   /* background-image: linear-gradient(45deg, #0043c0, #72aef3); */
-  background: linear-gradient(rgb(5, 105, 204), rgb(9, 72, 145), rgb(1, 35, 68));
+  background: linear-gradient(#3367d6, rgb(9, 72, 145), rgb(1, 35, 68));
   box-shadow: 4px 1px 8px 0px rgba(0, 0, 0, 0.459);
   transition: 0.3s ease-in-out all;
   margin-top: 0;
@@ -60,7 +60,7 @@ tspan {
 /* -------loader------- */
 
 section.loader {
-  background: rgb(1, 39, 75);
+  background: #3367d6;
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -497,6 +497,31 @@ button.close {
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.295);
 }
 
+/* btn notification */
+
+.btn-notification {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 7px;
+  background-color: rgba(6, 99, 192, 0.692);
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 82%;
+  left: 5%;
+  z-index: 99;
+  transition: var(--transition);
+}
+
+.btn-notification:hover {
+  transition: var(--transition);
+  cursor: pointer;
+  transform: translateY(-3px);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.295);
+}
 /* --------------------------------------------
                 ---*MENU*---
 ---------------------------------------------- */
@@ -554,7 +579,8 @@ li.dropdown .dropdown-menu > a:hover {
   height: 20px;
 }
 
-.nav-item .fa-search {
+.nav-item .fa-search,
+.nav-item .fas {
   cursor: pointer;
 }
 
@@ -1742,8 +1768,7 @@ footer {
 @media (max-width: 767px) {
   .footer-navbar-sec .col-12:nth-child(1),
   .footer-navbar-sec .col-12:nth-child(2),
-  .footer-navbar-sec .col-12:nth-child(3)
-   {
+  .footer-navbar-sec .col-12:nth-child(3) {
     border-right: none;
   }
 
