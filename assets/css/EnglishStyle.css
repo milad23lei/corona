@@ -43,6 +43,15 @@ menu {
   }
 }
 
+@media (max-width: 991.9px) {
+  .menu-icon {
+    margin-left: auto !important;
+    margin-right: 5% !important;
+  }
+  .navbar-brand {
+    margin-left: 5% !important;
+  }
+}
 /* ------------------------------------------------------------------- */
 /* Main */
 /* ------------------------------------------------------------------- */
@@ -64,6 +73,11 @@ div {
   font-family: "text";
 }
 
+h5.counter-value-Iran.border-bottom.border-light,
+h5.counter-value-world.border-bottom.border-light {
+  font-family: "bunner-title";
+}
+
 .detail-day,
 .detail-time {
   font-family: "text";
@@ -80,7 +94,7 @@ div {
   border-left: 1px solid white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .collapse {
     position: absolute;
     background: linear-gradient(rgb(5, 105, 204), rgb(9, 72, 145), rgb(1, 35, 68));
@@ -106,10 +120,10 @@ div {
     font-size: 4rem !important;
   }
   .footer-navbar-sec .col-12:nth-child(1),
-.footer-navbar-sec .col-12:nth-child(2),
-.footer-navbar-sec .col-12:nth-child(3) {
-  border-left: none;
-}
+  .footer-navbar-sec .col-12:nth-child(2),
+  .footer-navbar-sec .col-12:nth-child(3) {
+    border-left: none !important;
+  }
 }
 
 @media (min-width: 1535px) {

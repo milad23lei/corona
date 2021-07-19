@@ -8,8 +8,8 @@
     <!-- index -->
     <title>Covid-19</title>
     <link rel="icon" type="image/ico" href="assets/image/corona-logo.ico" />
-    <link rel="stylesheet" href="assets/css/Style.css" />
     <link rel="stylesheet" href="assets/css/EnglishStyle.css" />
+    <link rel="stylesheet" href="assets/css/Style.css" />
     <meta name="keywords" content="کرونا چیست , covid-19 , ویروس کرونا , راه های پیشگیری ویروس کرونا , آمار کرونا , کرونا چگونه منتقل میشود ,کوید 19 , وضعیت کرونای ایران" />
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -72,7 +72,7 @@
     <header>
       <menu class="fixed-top">
         <nav class="navbar navbar-expand-lg d-flex align-items-center justify-content-center" id="navbar">
-          <div class="ml-0 ml-lg-5 ml-xl-5 logo-site d-flex align-items-center justify-content-between">
+          <div class="ml-0 ml-lg-5 ml-xl-5 logo-site w-100 d-flex align-items-center justify-content-between">
             <a class="navbar-brand" href="#"><img src="assets/image/logo-virus-en.png" width="75" class="img-fluid" alt="logo virus" /></a>
             <div class="menu-icon d-block d-lg-none d-xl-none">
               <div>
@@ -393,9 +393,8 @@
                   <div class="animation-bar w-100"></div>
                 </div>
               </div>
-            </div>
-            <div class="d-flex flex-column flex-lg-row flex-xl-row justify-content-center align-items-center">
-              <div class="col-12 col-lg-3 col-xl-3 my-4">
+            </div>          
+            <div class="col-12 col-md-6 col-lg-4  my-4">
                 <div class="card">
                   <div class="ticked">
                     <div class="ticked-shape">
@@ -445,8 +444,8 @@
                     </a>
                   </div>
                 </div>
-              </div>
-              <div class="col-12 col-lg-3 col-xl-3 my-4">
+            </div>
+            <div class="col-12 col-md-6 col-lg-4  my-4">
                 <div class="card">
                   <div class="ticked">
                     <div class="ticked-shape">
@@ -494,8 +493,8 @@
                     </a>
                   </div>
                 </div>
-              </div>
-              <div class="col-12 col-lg-3 col-xl-3 my-4">
+            </div>
+            <div class="col-12 col-md-6 col-lg-4  my-4">
                 <div class="card">
                   <div class="ticked">
                     <div class="ticked-shape">
@@ -543,8 +542,7 @@
                     </a>
                   </div>
                 </div>
-              </div>
-            </div>
+            </div>          
             <div class="col-12">
               <div class="view-all-btn float-right mr-0 mr-xl-5 mr-lg-5 my-3">
                 <a target="0" href="https://www.mehrnews.com/archive?pi=1&kw=%D9%88%DB%8C%D8%B1%D9%88%D8%B3%20%DA%A9%D8%B1%D9%88%D9%86%D8%A7&ms=0&dy=6&mn=8&yr=1399">
@@ -582,29 +580,28 @@
             <div class="col-12 w-100">
               <div id="map" class="mx-auto"></div>
             </div>
-            <div id="counter-world" class="d-flex flex-column flex-lg-row flex-xl-row justify-content-center w-100 my-5">
-              <div class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
+            <div id="counter-world" ></div>
+            <div class="col-12 col-md-4 text-center my-4 d-flex justify-content-center">
                 <div class="counter-keeper counter-card-1">
                   <h5 class="counter-value-world border-bottom border-light" data-countWorld="81735201">81735000</h5>
                   <div>person</div>
                   <h3>Infected</h3>
                 </div>
-              </div>
-              <div class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
+            </div>
+            <div class="col-12 col-md-4 text-center my-4 d-flex justify-content-center">
                 <div class="counter-keeper counter-card-2">
                   <h5 class="counter-value-world border-bottom border-light" data-countWorld="1783100">1783000</h5>
                   <div>person</div>
                   <h3>Deceased</h3>
                 </div>
-              </div>
-              <div class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
+            </div>
+            <div class="col-12 col-md-4 text-center my-4 d-flex justify-content-center">
                 <div class="counter-keeper counter-card-3">
                   <h5 class="counter-value-world border-bottom border-light" data-countWorld="57878464">57878000</h5>
                   <div>person</div>
                   <h3>has improved</h3>
                 </div>
-              </div>
-            </div>
+            </div>           
           </div>
         </div>
       </section>
@@ -1380,7 +1377,7 @@
         </div>
       </section>
       <!--Statistics of Iran-->
-      <section class="my-5">
+      <section class="my-5 holder-iran-statistics">
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">
@@ -1389,32 +1386,30 @@
                   <h3 class="mb-4">Iran</h3>
                 </div>
               </div>
-            </div>
-            <div class="col-12 p-0 holder-iran-statistics">
-              <div id="counter-Iran" class="d-flex flex-column flex-lg-row flex-xl-row justify-content-center w-100 my-5">
-                <div class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
+            </div>            
+              <div id="counter-Iran"></div>
+              <div class="col-12 col-md-4 text-center my-4 d-flex justify-content-center">
                   <div class="counter-keeper counter-card-1">
                     <h5 class="counter-value-Iran border-bottom border-light" data-countIran="1177554">1165554</h5>
                     <div>person</div>
                     <h3>Infected</h3>
                   </div>
-                </div>
-                <div class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
+              </div>
+              <div class="col-12 col-md-4 text-center my-4 d-flex justify-content-center">
                   <div class="counter-keeper counter-card-2">
                     <h5 class="counter-value-Iran border-bottom border-light" data-countIran="54156">52156</h5>
                     <div>person</div>
                     <h3>Deceased</h3>
                   </div>
-                </div>
-                <div class="col-12 col-lg-4 col-xl-4 text-center my-4 d-flex justify-content-center">
+              </div>
+              <div class="col-12 col-md-4 text-center my-4 d-flex justify-content-center">
                   <div class="counter-keeper counter-card-3">
                     <h5 class="counter-value-Iran border-bottom border-light" data-countIran="914194">909194</h5>
                     <div>person</div>
                     <h3>has improved</h3>
                   </div>
-                </div>
               </div>
-              <div class="d-flex flex-column flex-xl-row flex-lg-row align-items-center justify-content-center container-svg my-4">
+              <div class="d-flex mx-auto flex-column flex-xl-row flex-lg-row align-items-center justify-content-center container-svg my-4">
                 <svg width="654.51147" height="593.71021">
                   <path
                     data-toggle="tooltip"
@@ -1690,9 +1685,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              </div>          
         </div>
       </section>
 
@@ -1867,7 +1860,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-lg-6 col-xl-4 text-center my-3">
+            <div class="col-12 col-md-6 xol-lg-4 text-center my-3">
               <div class="government-action-card">
                 <div class="government-action-card-img">
                   <img src="assets/image/government-action6.png" class="img-fluid" width="250" alt="government action image" />
@@ -1877,7 +1870,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-lg-6 col-xl-4 text-center my-3">
+            <div class="col-12 col-md-6 xol-lg-4 text-center my-3">
               <div class="government-action-card">
                 <div class="government-action-card-img">
                   <img src="assets/image/government-action5.png" class="img-fluid" width="250" alt="government action image" />
@@ -1887,7 +1880,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-lg-6 col-xl-4 text-center my-3">
+            <div class="col-12 col-md-6 xol-lg-4 text-center my-3">
               <div class="government-action-card">
                 <div class="government-action-card-img">
                   <img src="assets/image/government-action2.png" class="img-fluid" width="250" alt="government action image" />
@@ -1897,7 +1890,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-lg-6 col-xl-4 text-center my-3">
+            <div class="col-12 col-md-6 xol-lg-4 text-center my-3">
               <div class="government-action-card">
                 <div class="government-action-card-img">
                   <img src="assets/image/government-action3.png" class="img-fluid" width="250" alt="government action image" />
@@ -1907,7 +1900,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-lg-6 col-xl-4 text-center my-3">
+            <div class="col-12 col-md-6 xol-lg-4 text-center my-3">
               <div class="government-action-card">
                 <div class="government-action-card-img">
                   <img src="assets/image/government-action4.png" class="img-fluid" width="250" alt="government action image" />
@@ -1917,7 +1910,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-lg-6 col-xl-4 text-center my-3">
+            <div class="col-12 col-md-6 xol-lg-4 text-center my-3">
               <div class="government-action-card">
                 <div class="government-action-card-img">
                   <img src="assets/image/government-action1.png" class="img-fluid" width="250" alt="government action image" />
@@ -2014,6 +2007,11 @@
       <section class="footer-comment-sec my-1">
         <div class="container-fluid">
           <div class="row d-flex align-items-center">
+            <div class="col-12 col-lg-6 col-xl-6 p-0 d-none d-xl-block d-lg-block">
+              <div class="img-footer">
+                <img src="assets/image/img-footer.png" width="400" class="img-fluid" alt="image footer" />
+              </div>
+            </div>
             <div class="col-12 col-lg-6 col-xl-6">
               <div class="comment">
                 <div class="form-group">
@@ -2026,12 +2024,7 @@
                   <button type="submit" class="btn-success btn">Send !</button>
                 </div>
               </div>
-            </div>
-            <div class="col-12 col-lg-6 col-xl-6 p-0 d-none d-xl-block d-lg-block">
-              <div class="img-footer">
-                <img src="assets/image/img-footer.png" width="400" class="img-fluid" alt="image footer" />
-              </div>
-            </div>
+            </div>          
           </div>
         </div>
       </section>

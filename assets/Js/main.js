@@ -100,39 +100,6 @@ $(document).ready(function () {
     e.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, 2000);
   });
-
-  // clock
-  // var clock = $(".online-clock");
-  // clock.hide();
-  // $(window).scroll(function () {
-  //   if ($(window).scrollTop() > 450) {
-  //     clock.show(50);
-  //   } else {
-  //     clock.hide(50);
-  //   }
-  // });
-  // $(".clock-icon").on("click", function () {
-  //   $(clock).toggleClass("opened");
-  //   $(".clock-icon .fa-clock-o").toggleClass("icon-clock");
-  //   icon = $(this).find("i");
-  //   icon.toggleClass("fa-angle-right fa-angle-left");
-  // });
-  // var d = setInterval(myDate, 1000);
-  // function myDate() {
-  //   var date = new Date();
-  //   document.getElementById("onlineClock").innerHTML = date.toLocaleTimeString();
-  // }
-  // if ($(window).width() < 767) {
-  //   $(clock).css("left", "-52%");
-  //   $(".clock-icon").on("click", function () {
-  //     $(clock).toggleClass("opened");
-  //     // $(".clock-icon .fa-clock-o").toggleClass("icon-clock");
-  //     // icon = $(this).find("i");
-  //     // icon.toggleClass("fa-angle-right fa-angle-left");
-  //   });
-  // } else {
-  //   // change functionality for larger screens
-  // }
 });
 
 // counter Statistics of world
