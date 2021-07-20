@@ -1,22 +1,26 @@
 {
   "name": "corona",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.1.0",
+  "description": "corona school",
+  "private": true,
   "scripts": {
-    "start": "http-server -p 8000 -c -1"
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/unlocker/corona.git"
+    "url": "git+https://gitlab.com/milad23/corona.git"
   },
-  "author": "",
+  "author": "Milad Soradi Zeid",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/unlocker/corona/issues"
+    "url": "https://gitlab.com/milad23/corona/issues"
   },
-  "homepage": "https://gitlab.com/unlocker/corona#readme",
-  "dependencies": {
-    "http-server": "^0.12.3"
+  "homepage": "https://gitlab.com/milad23/corona#readme",
+  "devDependencies": {
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }
